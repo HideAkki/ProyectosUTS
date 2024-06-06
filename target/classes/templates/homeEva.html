@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Gestor Proyectos</title>
+	<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous"
+	/>
+	<style>
+		body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #28a745;
+            color: #ffffff;
+            border-radius: 0;
+            margin-bottom: 30px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card {
+            margin-top: 50px;
+            border: 1px solid #ced4da;
+            border-radius: 10px;
+        }
+        .card-title {
+            font-size: 20px;
+            color: #212529;
+        }
+        .card-text {
+            color: #495057;
+        }
+        .btn {
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+	</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#" style="color: #ffffff;">PROYECTOS UTS</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="#" style="color: #ffffff;">Inicio</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#" style="color: #ffffff;">Proyectos</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-danger" href="/" style="color: #ffffff;">Cerrar Sesión</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class="container text-center">
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">Proyectos</h5>
+			<p class="card-text">Checa un vistazo a los proyectos que te han asignado.</p>
+			<a th:href="'/listar-proy-eva/' + ${id}" target="_blank" class="btn btn-primary">Echar un vistazo</a>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">Calendario Académico</h5>
+			<p class="card-text">Consulta el calendario académico para estar al tanto de las fechas importantes.</p>
+			<a href="https://www.uts.edu.co/sitio/wp-content/uploads/2019/10/ACUERDO-No.-03-019-CONSEJO-ACADEMICO-CALENDAIO-ACADEMICO-PRESENCIAL-II-SEMESTRE-2024.pdf" target="_blank" class="btn btn-primary">Consultar</a>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">Formato De Grado</h5>
+			<p class="card-text">Consulta el formato de grado para conocer los requisitos y procedimientos.</p>
+			<a href="https://www.uts.edu.co/sitio/wp-content/uploads/2020/04/PROCEDIMIENTO-ENTREGA-DOCUMENTOS-DE-GRADO.pdf" target="_blank" class="btn btn-primary">Consultar</a>
+		</div>
+	</div>
+</div>
+
+<!--FOOTER-->
+<footer th:replace="layout/layout :: pie-de-pagina"></footer>
+
+<div th:replace="layout/layout :: script"></div>
+</body>
+</html>
