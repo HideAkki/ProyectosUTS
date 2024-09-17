@@ -12,7 +12,26 @@
           crossorigin="anonymous"
   />
   <style>
-    body, html {
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+
+      background: #6ebd6b;
+      --gap: 5em;
+      --line: 1px;
+      --color: rgba(0, 80, 0, 0.582);
+
+      background-image: linear-gradient(-90deg,
+          transparent calc(var(--gap) - var(--line)),
+          var(--color) calc(var(--gap) - var(--line) + 1px),
+          var(--color) var(--gap)),
+        linear-gradient(0deg,
+          transparent calc(var(--gap) - var(--line)),
+          var(--color) calc(var(--gap) - var(--line) + 1px),
+          var(--color) var(--gap));
+      background-size: var(--gap) var(--gap);
+
       margin: 0;
       padding: 0;
       height: 100%;
@@ -20,36 +39,43 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #f8f9fa;
+
     }
+
     .form-container {
       background-color: #ffffff;
       padding: 2rem;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgba(203, 255, 178, 0.1);
       text-align: center;
       max-width: 400px;
       width: 100%;
     }
+
     .form-container h3 {
       margin-bottom: 1.5rem;
       letter-spacing: 1px;
     }
+
     .form-outline {
       margin-bottom: 1.5rem;
       text-align: left;
     }
+
     .form-outline input {
       width: 100%;
       padding: 0.75rem;
       border: 1px solid #ced4da;
       border-radius: 6px;
-      box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total del input */
+      box-sizing: border-box;
+      /* Asegura que el padding no afecte el tamaño total del input */
     }
+
     .form-outline label {
       display: block;
       margin-bottom: 0.5rem;
     }
+
     .btn-submit {
       width: 100%;
       padding: 0.75rem;
@@ -60,17 +86,22 @@
       font-size: 1rem;
       cursor: pointer;
     }
+
     .btn-submit:hover {
       background-color: #218838;
     }
-    .small, .link {
+
+    .small,
+    .link {
       font-size: 0.9rem;
       color: #6c757d;
     }
+
     .link {
       color: #28a745;
       text-decoration: none;
     }
+
     .link:hover {
       text-decoration: underline;
     }
